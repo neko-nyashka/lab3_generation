@@ -1,0 +1,168 @@
+\begin{theindex}
+
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.cpp}, 
+		\hyperpage{3}, \hyperpage{7}
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.h}, 
+		\hyperpage{10}, \hyperpage{14}
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.cpp}, 
+		\hyperpage{14}, \hyperpage{17}
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.h}, 
+		\hyperpage{19}, \hyperpage{22}
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.cpp}, 
+		\hyperpage{22}, \hyperpage{25}
+  \item {/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.h}, 
+		\hyperpage{26}, \hyperpage{29}
+
+  \indexspace
+
+  \item {block\_frequency\_test}
+    \subitem {nist.cpp}, \hyperpage{15}
+    \subitem {nist.h}, \hyperpage{20}
+
+  \indexspace
+
+  \item {checking\_chi2}
+    \subitem {stats.cpp}, \hyperpage{23}
+    \subitem {stats.h}, \hyperpage{27}
+  \item {chi2\_exp}
+    \subitem {stats.cpp}, \hyperpage{23}
+    \subitem {stats.h}, \hyperpage{27}
+  \item {chi2\_teor}
+    \subitem {stats.cpp}, \hyperpage{24}
+    \subitem {stats.h}, \hyperpage{28}
+  \item {cusum\_test}
+    \subitem {nist.cpp}, \hyperpage{15}
+    \subitem {nist.h}, \hyperpage{20}
+  \item {cv}
+    \subitem {stats.cpp}, \hyperpage{24}
+    \subitem {stats.h}, \hyperpage{28}
+
+  \indexspace
+
+  \item {gen.cpp}
+    \subitem {generate\_and\_analyze}, \hyperpage{4}
+    \subitem {lcg\_next}, \hyperpage{4}
+    \subitem {lcg\_sample}, \hyperpage{4}
+    \subitem {main}, \hyperpage{5}
+    \subitem {mid\_square\_next}, \hyperpage{5}
+    \subitem {mid\_square\_sample}, \hyperpage{5}
+    \subitem {mt\_sample}, \hyperpage{6}
+    \subitem {time}, \hyperpage{6}
+    \subitem {time\_seed}, \hyperpage{6}
+    \subitem {xorshift\_next}, \hyperpage{6}
+    \subitem {xorshift\_sample}, \hyperpage{7}
+  \item {gen.h}
+    \subitem {generate\_and\_analyze}, \hyperpage{10}
+    \subitem {lcg\_next}, \hyperpage{11}
+    \subitem {lcg\_sample}, \hyperpage{11}
+    \subitem {mid\_square\_next}, \hyperpage{11}
+    \subitem {mid\_square\_sample}, \hyperpage{12}
+    \subitem {mt\_sample}, \hyperpage{12}
+    \subitem {time}, \hyperpage{13}
+    \subitem {time\_seed}, \hyperpage{13}
+    \subitem {xorshift\_next}, \hyperpage{13}
+    \subitem {xorshift\_sample}, \hyperpage{13}
+  \item {generate\_and\_analyze}
+    \subitem {gen.cpp}, \hyperpage{4}
+    \subitem {gen.h}, \hyperpage{10}
+
+  \indexspace
+
+  \item {lcg\_next}
+    \subitem {gen.cpp}, \hyperpage{4}
+    \subitem {gen.h}, \hyperpage{11}
+  \item {lcg\_sample}
+    \subitem {gen.cpp}, \hyperpage{4}
+    \subitem {gen.h}, \hyperpage{11}
+  \item {longest\_run\_test}
+    \subitem {nist.cpp}, \hyperpage{16}
+    \subitem {nist.h}, \hyperpage{21}
+
+  \indexspace
+
+  \item {main}
+    \subitem {gen.cpp}, \hyperpage{5}
+  \item {mean}
+    \subitem {stats.cpp}, \hyperpage{24}
+    \subitem {stats.h}, \hyperpage{28}
+  \item {mid\_square\_next}
+    \subitem {gen.cpp}, \hyperpage{5}
+    \subitem {gen.h}, \hyperpage{11}
+  \item {mid\_square\_sample}
+    \subitem {gen.cpp}, \hyperpage{5}
+    \subitem {gen.h}, \hyperpage{12}
+  \item {monobit\_test}
+    \subitem {nist.cpp}, \hyperpage{16}
+    \subitem {nist.h}, \hyperpage{21}
+  \item {mt\_sample}
+    \subitem {gen.cpp}, \hyperpage{6}
+    \subitem {gen.h}, \hyperpage{12}
+
+  \indexspace
+
+  \item {nist.cpp}
+    \subitem {block\_frequency\_test}, \hyperpage{15}
+    \subitem {cusum\_test}, \hyperpage{15}
+    \subitem {longest\_run\_test}, \hyperpage{16}
+    \subitem {monobit\_test}, \hyperpage{16}
+    \subitem {Phi}, \hyperpage{16}
+    \subitem {runs\_test}, \hyperpage{17}
+  \item {nist.h}
+    \subitem {block\_frequency\_test}, \hyperpage{20}
+    \subitem {cusum\_test}, \hyperpage{20}
+    \subitem {longest\_run\_test}, \hyperpage{21}
+    \subitem {monobit\_test}, \hyperpage{21}
+    \subitem {Phi}, \hyperpage{21}
+    \subitem {runs\_test}, \hyperpage{22}
+
+  \indexspace
+
+  \item {Phi}
+    \subitem {nist.cpp}, \hyperpage{16}
+    \subitem {nist.h}, \hyperpage{21}
+
+  \indexspace
+
+  \item {runs\_test}
+    \subitem {nist.cpp}, \hyperpage{17}
+    \subitem {nist.h}, \hyperpage{22}
+
+  \indexspace
+
+  \item {stats.cpp}
+    \subitem {checking\_chi2}, \hyperpage{23}
+    \subitem {chi2\_exp}, \hyperpage{23}
+    \subitem {chi2\_teor}, \hyperpage{24}
+    \subitem {cv}, \hyperpage{24}
+    \subitem {mean}, \hyperpage{24}
+    \subitem {stddev}, \hyperpage{25}
+  \item {stats.h}
+    \subitem {checking\_chi2}, \hyperpage{27}
+    \subitem {chi2\_exp}, \hyperpage{27}
+    \subitem {chi2\_teor}, \hyperpage{28}
+    \subitem {cv}, \hyperpage{28}
+    \subitem {mean}, \hyperpage{28}
+    \subitem {stddev}, \hyperpage{29}
+  \item {stddev}
+    \subitem {stats.cpp}, \hyperpage{25}
+    \subitem {stats.h}, \hyperpage{29}
+
+  \indexspace
+
+  \item {time}
+    \subitem {gen.cpp}, \hyperpage{6}
+    \subitem {gen.h}, \hyperpage{13}
+  \item {time\_seed}
+    \subitem {gen.cpp}, \hyperpage{6}
+    \subitem {gen.h}, \hyperpage{13}
+
+  \indexspace
+
+  \item {xorshift\_next}
+    \subitem {gen.cpp}, \hyperpage{6}
+    \subitem {gen.h}, \hyperpage{13}
+  \item {xorshift\_sample}
+    \subitem {gen.cpp}, \hyperpage{7}
+    \subitem {gen.h}, \hyperpage{13}
+
+\end{theindex}

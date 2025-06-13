@@ -1,0 +1,255 @@
+\hypertarget{gen_8cpp}{}\doxysection{/\+Users/anastasiatrufanova/\+Desktop/lab3\+\_\+generation/src/gen.cpp File Reference}
+\label{gen_8cpp}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.cpp@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.cpp}}
+{\ttfamily \#include \char`\"{}gen.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}nist.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stats.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{gen_8cpp_a2f7c07133e6d6275f44f67061b1b60c4}{time\+\_\+seed}} ()
+\begin{DoxyCompactList}\small\item\em Returns the current time in microseconds as a 32-\/bit integer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{gen_8cpp_a207e86f5aa9d10ec4e8035844a55c74a}{mid\+\_\+square\+\_\+next}} (uint32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Computes the next value using the mid-\/square method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_a6e549434ada5a7412d9ed1382fb64ce3}{mid\+\_\+square\+\_\+sample}} (uint32\+\_\+t seed, int len, uint32\+\_\+t $\ast$a)
+\begin{DoxyCompactList}\small\item\em Generates a sequence using the mid-\/square method. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{gen_8cpp_ab0e759ee762bf507e673635020dbf7a3}{lcg\+\_\+next}} (uint32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Computes the next value using the Linear Congruential Generator (LCG) method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_a6d5e753d2e29ce4594ee2b75dc6a83b9}{lcg\+\_\+sample}} (uint32\+\_\+t seed, int len, uint32\+\_\+t $\ast$a)
+\begin{DoxyCompactList}\small\item\em Generates a sequence using the LCG method. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{gen_8cpp_a193c3fcdb2a5da7a85aaf5e923598bbf}{xorshift\+\_\+next}} (uint32\+\_\+t x)
+\begin{DoxyCompactList}\small\item\em Computes the next value using the xorshift method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_afa5d0bda2e334c5a019d27099194e2a4}{xorshift\+\_\+sample}} (uint32\+\_\+t seed, int len, uint32\+\_\+t $\ast$a)
+\begin{DoxyCompactList}\small\item\em Generates a sequence using the xorshift method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_aed1ed43b94dce26b9d1526ed287e24f3}{mt\+\_\+sample}} (uint32\+\_\+t seed, int len, uint32\+\_\+t $\ast$a)
+\begin{DoxyCompactList}\small\item\em Generates a sequence using the Mersenne Twister (mt19937) generator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_a37d31569f40b18d45314d997bd1c16cb}{generate\+\_\+and\+\_\+analyze}} (std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&samples, void($\ast$generator)(uint32\+\_\+t, int, uint32\+\_\+t $\ast$), const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Generates multiple samples using the provided generator and performs statistical analysis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{gen_8cpp_a130dfa0edfc9df117268b6076d59bbab}{time}} ()
+\begin{DoxyCompactList}\small\item\em Benchmarks the execution time of different random number generators and logs results. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{gen_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gen_8cpp_a37d31569f40b18d45314d997bd1c16cb}\label{gen_8cpp_a37d31569f40b18d45314d997bd1c16cb}} 
+\index{gen.cpp@{gen.cpp}!generate\_and\_analyze@{generate\_and\_analyze}}
+\index{generate\_and\_analyze@{generate\_and\_analyze}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{generate\_and\_analyze()}{generate\_and\_analyze()}}
+{\footnotesize\ttfamily void generate\+\_\+and\+\_\+analyze (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::vector$<$ uint32\+\_\+t $>$ $>$ \&}]{samples,  }\item[{void($\ast$)(uint32\+\_\+t, int, uint32\+\_\+t $\ast$)}]{generator,  }\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})}
+
+
+
+Generates multiple samples using the provided generator and performs statistical analysis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & Output vector of sequences. \\
+\hline
+{\em generator} & Pointer to a generator function. \\
+\hline
+{\em name} & Name of the generator (used for logging/output). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00077}{77}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_ab0e759ee762bf507e673635020dbf7a3}\label{gen_8cpp_ab0e759ee762bf507e673635020dbf7a3}} 
+\index{gen.cpp@{gen.cpp}!lcg\_next@{lcg\_next}}
+\index{lcg\_next@{lcg\_next}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{lcg\_next()}{lcg\_next()}}
+{\footnotesize\ttfamily uint32\+\_\+t lcg\+\_\+next (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Computes the next value using the Linear Congruential Generator (LCG) method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The previous value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next pseudo-\/random number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00031}{31}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a6d5e753d2e29ce4594ee2b75dc6a83b9}\label{gen_8cpp_a6d5e753d2e29ce4594ee2b75dc6a83b9}} 
+\index{gen.cpp@{gen.cpp}!lcg\_sample@{lcg\_sample}}
+\index{lcg\_sample@{lcg\_sample}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{lcg\_sample()}{lcg\_sample()}}
+{\footnotesize\ttfamily void lcg\+\_\+sample (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{int}]{len,  }\item[{uint32\+\_\+t $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Generates a sequence using the LCG method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Initial seed value. \\
+\hline
+{\em len} & Length of the sequence. \\
+\hline
+{\em a} & Output array for the generated numbers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{gen_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{gen.cpp@{gen.cpp}!main@{main}}
+\index{main@{main}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00154}{154}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a207e86f5aa9d10ec4e8035844a55c74a}\label{gen_8cpp_a207e86f5aa9d10ec4e8035844a55c74a}} 
+\index{gen.cpp@{gen.cpp}!mid\_square\_next@{mid\_square\_next}}
+\index{mid\_square\_next@{mid\_square\_next}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{mid\_square\_next()}{mid\_square\_next()}}
+{\footnotesize\ttfamily uint32\+\_\+t mid\+\_\+square\+\_\+next (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Computes the next value using the mid-\/square method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The previous value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next pseudo-\/random number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a6e549434ada5a7412d9ed1382fb64ce3}\label{gen_8cpp_a6e549434ada5a7412d9ed1382fb64ce3}} 
+\index{gen.cpp@{gen.cpp}!mid\_square\_sample@{mid\_square\_sample}}
+\index{mid\_square\_sample@{mid\_square\_sample}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{mid\_square\_sample()}{mid\_square\_sample()}}
+{\footnotesize\ttfamily void mid\+\_\+square\+\_\+sample (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{int}]{len,  }\item[{uint32\+\_\+t $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Generates a sequence using the mid-\/square method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Initial seed value. \\
+\hline
+{\em len} & Length of the sequence. \\
+\hline
+{\em a} & Output array for the generated numbers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_aed1ed43b94dce26b9d1526ed287e24f3}\label{gen_8cpp_aed1ed43b94dce26b9d1526ed287e24f3}} 
+\index{gen.cpp@{gen.cpp}!mt\_sample@{mt\_sample}}
+\index{mt\_sample@{mt\_sample}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{mt\_sample()}{mt\_sample()}}
+{\footnotesize\ttfamily void mt\+\_\+sample (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{int}]{len,  }\item[{uint32\+\_\+t $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Generates a sequence using the Mersenne Twister (mt19937) generator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Initial seed value. \\
+\hline
+{\em len} & Length of the sequence. \\
+\hline
+{\em a} & Output array for the generated numbers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00068}{68}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a130dfa0edfc9df117268b6076d59bbab}\label{gen_8cpp_a130dfa0edfc9df117268b6076d59bbab}} 
+\index{gen.cpp@{gen.cpp}!time@{time}}
+\index{time@{time}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily void time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Benchmarks the execution time of different random number generators and logs results. 
+
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00105}{105}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a2f7c07133e6d6275f44f67061b1b60c4}\label{gen_8cpp_a2f7c07133e6d6275f44f67061b1b60c4}} 
+\index{gen.cpp@{gen.cpp}!time\_seed@{time\_seed}}
+\index{time\_seed@{time\_seed}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{time\_seed()}{time\_seed()}}
+{\footnotesize\ttfamily uint32\+\_\+t time\+\_\+seed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the current time in microseconds as a 32-\/bit integer. 
+
+\begin{DoxyReturn}{Returns}
+A time-\/based seed value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_a193c3fcdb2a5da7a85aaf5e923598bbf}\label{gen_8cpp_a193c3fcdb2a5da7a85aaf5e923598bbf}} 
+\index{gen.cpp@{gen.cpp}!xorshift\_next@{xorshift\_next}}
+\index{xorshift\_next@{xorshift\_next}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{xorshift\_next()}{xorshift\_next()}}
+{\footnotesize\ttfamily uint32\+\_\+t xorshift\+\_\+next (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{x }\end{DoxyParamCaption})}
+
+
+
+Computes the next value using the xorshift method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The previous value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The next pseudo-\/random number. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00048}{48}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+
+\mbox{\Hypertarget{gen_8cpp_afa5d0bda2e334c5a019d27099194e2a4}\label{gen_8cpp_afa5d0bda2e334c5a019d27099194e2a4}} 
+\index{gen.cpp@{gen.cpp}!xorshift\_sample@{xorshift\_sample}}
+\index{xorshift\_sample@{xorshift\_sample}!gen.cpp@{gen.cpp}}
+\doxysubsubsection{\texorpdfstring{xorshift\_sample()}{xorshift\_sample()}}
+{\footnotesize\ttfamily void xorshift\+\_\+sample (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{seed,  }\item[{int}]{len,  }\item[{uint32\+\_\+t $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Generates a sequence using the xorshift method. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em seed} & Initial seed value. \\
+\hline
+{\em len} & Length of the sequence. \\
+\hline
+{\em a} & Output array for the generated numbers. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{gen_8cpp_source_l00056}{56}} of file \mbox{\hyperlink{gen_8cpp_source}{gen.\+cpp}}.
+

@@ -1,0 +1,188 @@
+\hypertarget{nist_8cpp_source}{}\doxysection{nist.\+cpp}
+\label{nist_8cpp_source}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.cpp@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.cpp}}
+\mbox{\hyperlink{nist_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{nist_8h}{nist.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00003}00003 \textcolor{comment}{// Frequency (Monobit) Test}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00004}00004 \textcolor{comment}{// To check the balance between zeros and ones in the entire sequence.}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00005}\mbox{\hyperlink{nist_8cpp_a8f9b69f8fe6cf10c548088f1449af394}{00005}} \textcolor{keywordtype}{int} \mbox{\hyperlink{nist_8cpp_a8f9b69f8fe6cf10c548088f1449af394}{monobit\_test}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00006}00006     \textcolor{keywordtype}{int} n = (sample.size() * 32);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00007}00007     \textcolor{keywordtype}{int} sum = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00008}00008     \textcolor{keywordflow}{for} (uint32\_t num : sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00009}00009         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 32; ++i) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00010}00010             \textcolor{keywordtype}{int} bit = (num >> i) \& 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00011}00011             sum += (bit == 1) ? 1 : -\/1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00013}00013         \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00015}00015     \textcolor{keywordtype}{double} s\_obs = fabs(sum) / sqrt(n);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00016}00016     \textcolor{keywordtype}{double} p\_val = erfc(s\_obs / M\_SQRT2);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00017}00017     \textcolor{keywordflow}{if} (p\_val > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00018}00018         std::cout<<\textcolor{stringliteral}{"{}| Monobit PASS "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00019}00019     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00020}00020         std::cout<<\textcolor{stringliteral}{"{}| Monobit FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00022}00022      \textcolor{keywordflow}{return} p\_val > 0.01;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00023}00023 \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00026}00026 \textcolor{comment}{// Runs Test}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00027}00027 \textcolor{comment}{// To check the alternation of zeros and ones.}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00028}\mbox{\hyperlink{nist_8cpp_ac39cd752aabf779d182f2c34dd9656db}{00028}} \textcolor{keywordtype}{int} \mbox{\hyperlink{nist_8cpp_ac39cd752aabf779d182f2c34dd9656db}{runs\_test}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00029}00029     \textcolor{keywordtype}{int} n = (sample.size() * 32);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00030}00030     \textcolor{keywordtype}{int} one\_count = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00031}00031     \textcolor{keywordtype}{int} runs = 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00032}00032     \textcolor{keywordtype}{int} pred\_bit = 0, bit = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00033}00033     \textcolor{keywordflow}{for} (uint32\_t num : sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00034}00034         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 32; ++i) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00035}00035             \textcolor{keywordflow}{if} (i > 0) pred\_bit = bit;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00036}00036             bit = (num >> i) \& 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00037}00037             \textcolor{keywordflow}{if} (bit != pred\_bit) runs++;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00038}00038             one\_count += bit;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00039}00039         \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00040}00040     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00041}00041     \textcolor{keywordtype}{double} pi = double(one\_count) / n;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00042}00042     \textcolor{keywordtype}{double} p\_val;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00043}00043     \textcolor{keywordflow}{if} (fabs(pi -\/ 0.5) >= 2.0 / sqrt(n)) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00044}00044         p\_val = 0.0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00045}00045     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00046}00046         \textcolor{keywordtype}{double} numerator = runs -\/ 2.0 * n * pi * (1 -\/ pi);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00047}00047         \textcolor{keywordtype}{double} denominator = 2.0 * sqrt(n) * pi * (1 -\/ pi);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00048}00048         p\_val = erfc(fabs(numerator) / denominator);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00050}00050     \textcolor{keywordflow}{if} (p\_val > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00051}00051         std::cout<<\textcolor{stringliteral}{"{}| Runs PASS "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00052}00052     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00053}00053         std::cout<<\textcolor{stringliteral}{"{}| Runs FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00055}00055     \textcolor{keywordflow}{return} p\_val > 0.01;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00056}00056 \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00058}00058 \textcolor{comment}{// Standard Normal Distribution Function}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00059}\mbox{\hyperlink{nist_8cpp_a7a44ba142152b381ce81d40b793d3053}{00059}} \textcolor{keywordtype}{double} \mbox{\hyperlink{nist_8cpp_a7a44ba142152b381ce81d40b793d3053}{Phi}}(\textcolor{keywordtype}{double} x) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00060}00060     \textcolor{keywordflow}{return} 0.5 * (1.0 + std::erf(x / std::sqrt(2.0)));}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00061}00061 \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00062}00062 \textcolor{comment}{// Cumulative Sums (Cusums) Test}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00063}00063 \textcolor{comment}{// To check the maximum deviation of the accumulated amount.}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00064}\mbox{\hyperlink{nist_8cpp_af8056c64415bd6a14bbd1e02e4c48bdd}{00064}} \textcolor{keywordtype}{int} \mbox{\hyperlink{nist_8cpp_af8056c64415bd6a14bbd1e02e4c48bdd}{cusum\_test}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00065}00065   \textcolor{keywordtype}{int} n = (sample.size() * 32);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00066}00066     \textcolor{keywordtype}{int} sum = 0, max\_sum = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00067}00067     \textcolor{keywordflow}{for} (uint32\_t num : sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00068}00068         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 32; ++i) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00069}00069             \textcolor{keywordtype}{int} bit = (num >> i) \& 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00070}00070             sum += (bit == 1) ? 1 : -\/1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00071}00071             \textcolor{keywordflow}{if} (abs(sum) > max\_sum) max\_sum = abs(sum);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00072}00072         \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00073}00073     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00074}00074     }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00075}00075     \textcolor{keywordtype}{double} z = max\_sum;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00076}00076     \textcolor{keywordtype}{double} p = 0.0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00077}00077     \textcolor{keywordtype}{int} k\_start = int((-\/n/z + 1)/4);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00078}00078     \textcolor{keywordtype}{int} k\_end = int((n/z -\/ 1)/4);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00079}00079     }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00080}00080     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = k\_start; k <= k\_end; k++) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00081}00081         p += \mbox{\hyperlink{nist_8cpp_a7a44ba142152b381ce81d40b793d3053}{Phi}}((4*k+1)*z/sqrt(n)) -\/ \mbox{\hyperlink{nist_8cpp_a7a44ba142152b381ce81d40b793d3053}{Phi}}((4*k-\/1)*z/sqrt(n));}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00082}00082     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00083}00083     \textcolor{keywordtype}{double} p\_val =  1.0 -\/ p;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00084}00084     \textcolor{keywordflow}{if} (p\_val > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00085}00085         std::cout<<\textcolor{stringliteral}{"{}| CuSum PASS "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00086}00086     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00087}00087         std::cout<<\textcolor{stringliteral}{"{}| Cusum FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00088}00088     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00089}00089     \textcolor{keywordflow}{return} p\_val  > 0.01;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00090}00090 \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00091}00091 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00092}00092 \textcolor{comment}{// Block Frequency Test}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00093}00093 \textcolor{comment}{// Check the uniformity of small blocks.}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00094}\mbox{\hyperlink{nist_8cpp_a94f5bf12a9b93439756de84711348deb}{00094}} \textcolor{keywordtype}{int} \mbox{\hyperlink{nist_8cpp_a94f5bf12a9b93439756de84711348deb}{block\_frequency\_test}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00095}00095     \textcolor{keywordtype}{int} block\_size = 128;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00096}00096     \textcolor{keywordtype}{int} num\_blocks = sample.size() * 32 / block\_size;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00097}00097     \textcolor{keywordtype}{double} chi\_sq = 0.0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00098}00098     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < num\_blocks; i++) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00099}00099         \textcolor{keywordtype}{int} ones = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00100}00100         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} ind = i * 4; ind < (i + 1) * 4; ++ind) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00101}00101             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 32; ++j) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00102}00102 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00103}00103                 ones += (sample[ind] >> j) \& 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00104}00104             \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00105}00105         \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00106}00106         \textcolor{keywordtype}{double} pi = double(ones) / block\_size;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00107}00107         chi\_sq += (pi -\/ 0.5) * (pi -\/ 0.5);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00109}00109     chi\_sq *= 4 * block\_size;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00111}00111     \textcolor{comment}{// X -\/> N(v, 2v):}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00112}00112     \textcolor{comment}{// v = N\_blocks;  Z = (X -\/ v) / sqrt(2v);  p = erfc(|Z|/sqrt(2)).}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00113}00113     \textcolor{keywordtype}{double} nu = double(num\_blocks);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00114}00114     \textcolor{keywordtype}{double} Z  = (chi\_sq -\/ nu) / sqrt(2.0 * nu);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00115}00115     \textcolor{keywordtype}{double} p\_val = erfc(abs(Z) / sqrt(2.0) );}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00116}00116     \textcolor{keywordflow}{if} (p\_val > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00117}00117         std::cout<<\textcolor{stringliteral}{"{}| BlockFreq PASS "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00118}00118     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00119}00119         std::cout<<\textcolor{stringliteral}{"{}| BlockFreq FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00120}00120     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00121}00121     \textcolor{keywordflow}{return} p\_val > 0.01;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00122}00122 \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00123}00123 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00124}00124 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00125}00125 \textcolor{comment}{// Longest Run of Ones in a Block (Longest series Test)}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00126}00126 \textcolor{comment}{// To check the length of the longest sequence of units.}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00127}\mbox{\hyperlink{nist_8cpp_a23e725639238b2b46ebe6a055e1a264d}{00127}} \textcolor{keywordtype}{int} \mbox{\hyperlink{nist_8cpp_a23e725639238b2b46ebe6a055e1a264d}{longest\_run\_test}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00128}00128     \textcolor{keywordtype}{int} total\_bits = sample.size() * 32;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00129}00129     \textcolor{keywordtype}{int} M = 128;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00130}00130     \textcolor{keywordtype}{int} K = 3;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00131}00131 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00132}00132     std::vector<double> pi = \{ 0.1174, 0.2430, 0.2493, 0.1752, 0.1027, 0.1124 \};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00133}00133    }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00134}00134     \textcolor{keywordtype}{int} num\_blocks = total\_bits / M;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00135}00135     std::vector<int> counts(K + 1, 0);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00136}00136     \textcolor{keywordtype}{int} bit\_pos = 0, run = 0, max\_run = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00138}00138     \textcolor{keywordflow}{for} (uint32\_t x : sample) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00139}00139         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} b = 0; b < 32; ++b) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00140}00140             \textcolor{keywordtype}{int} bit = (x >> b) \& 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00141}00141             \textcolor{keywordflow}{if} (bit) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00142}00142                 run++;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00143}00143                 \textcolor{keywordflow}{if} (run > max\_run) max\_run = run;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00144}00144             \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00145}00145                 run = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00146}00146             \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00147}00147             bit\_pos++;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00148}00148             \textcolor{keywordflow}{if} (bit\_pos == M) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00149}00149                 \textcolor{keywordtype}{int} idx = 0;  }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00150}00150                 \textcolor{keywordflow}{if} (max\_run <= 4) idx = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00151}00151                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (max\_run == 5) idx = 1;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00152}00152                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (max\_run == 6) idx = 2;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00153}00153                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (max\_run == 7) idx = 3;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00154}00154                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (max\_run == 8) idx = 4;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00155}00155                 \textcolor{keywordflow}{else} idx = 5;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00156}00156                }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00157}00157                 counts[idx]++;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00158}00158                 bit\_pos = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00159}00159                 run = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00160}00160                 max\_run = 0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00161}00161             \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00162}00162         \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00165}00165     \textcolor{keywordtype}{double} chi2 = 0.0;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00166}00166     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= K; ++i) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00167}00167         \textcolor{keywordtype}{double} expected = double(num\_blocks) * pi[i];}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00168}00168         \textcolor{keywordtype}{double} diff = double(counts[i]) -\/ expected;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00169}00169         chi2 += (diff * diff) / expected;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00170}00170     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00171}00171 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00172}00172     \textcolor{keywordtype}{double} Z = (chi2 -\/ K) / sqrt(2.0 * K);}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00173}00173     \textcolor{keywordtype}{double} p\_val = erfc(fabs(Z) / sqrt(2.0));}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00175}00175     \textcolor{keywordflow}{if} (p\_val > 0.01) \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00176}00176         std::cout << \textcolor{stringliteral}{"{}| LRO PASS "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00177}00177     \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00178}00178         std::cout << \textcolor{stringliteral}{"{}| LRO FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00179}00179     \}}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00180}00180 }
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00181}00181     \textcolor{keywordflow}{return} p\_val > 0.01;}
+\DoxyCodeLine{\Hypertarget{nist_8cpp_source_l00182}00182 \}}
+
+\end{DoxyCode}

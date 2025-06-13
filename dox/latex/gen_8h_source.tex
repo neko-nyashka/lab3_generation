@@ -1,0 +1,41 @@
+\hypertarget{gen_8h_source}{}\doxysection{gen.\+h}
+\label{gen_8h_source}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.h@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/gen.h}}
+\mbox{\hyperlink{gen_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef GEN\_H}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00002}00002 \textcolor{preprocessor}{\#define GEN\_H}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00005}00005 \textcolor{preprocessor}{\#include <random>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00006}00006 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00007}00007 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00008}00008 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00009}00009 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00015}00015 uint32\_t \mbox{\hyperlink{gen_8h_a2f7c07133e6d6275f44f67061b1b60c4}{time\_seed}}();}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00022}00022 uint32\_t \mbox{\hyperlink{gen_8h_a207e86f5aa9d10ec4e8035844a55c74a}{mid\_square\_next}}(uint32\_t x);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00030}00030 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_a6e549434ada5a7412d9ed1382fb64ce3}{mid\_square\_sample}}(uint32\_t seed, \textcolor{keywordtype}{int} len, uint32\_t* a);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00031}00031 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00037}00037 uint32\_t \mbox{\hyperlink{gen_8h_ab0e759ee762bf507e673635020dbf7a3}{lcg\_next}}(uint32\_t x);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00045}00045 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_a6d5e753d2e29ce4594ee2b75dc6a83b9}{lcg\_sample}}(uint32\_t seed, \textcolor{keywordtype}{int} len, uint32\_t* a);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00052}00052 uint32\_t \mbox{\hyperlink{gen_8h_a193c3fcdb2a5da7a85aaf5e923598bbf}{xorshift\_next}}(uint32\_t x);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00053}00053 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00060}00060 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_afa5d0bda2e334c5a019d27099194e2a4}{xorshift\_sample}}(uint32\_t seed, \textcolor{keywordtype}{int} len, uint32\_t* a);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00068}00068 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_aed1ed43b94dce26b9d1526ed287e24f3}{mt\_sample}}(uint32\_t seed, \textcolor{keywordtype}{int} len, uint32\_t* a);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00077}00077 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_a37d31569f40b18d45314d997bd1c16cb}{generate\_and\_analyze}}(std::vector<std::vector<uint32\_t>>\& samples,}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00078}00078                           \textcolor{keywordtype}{void} (*generator)(uint32\_t, \textcolor{keywordtype}{int}, uint32\_t*),}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00079}00079                           \textcolor{keyword}{const} std::string\& name);}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00084}00084 \textcolor{keywordtype}{void} \mbox{\hyperlink{gen_8h_a130dfa0edfc9df117268b6076d59bbab}{time}}();}
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00085}00085 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00086}00086 }
+\DoxyCodeLine{\Hypertarget{gen_8h_source_l00087}00087 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

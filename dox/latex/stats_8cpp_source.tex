@@ -1,0 +1,80 @@
+\hypertarget{stats_8cpp_source}{}\doxysection{stats.\+cpp}
+\label{stats_8cpp_source}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.cpp@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.cpp}}
+\mbox{\hyperlink{stats_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00001}00001 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{stats_8h}{stats.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00002}\mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{00002}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}(\textcolor{keyword}{const} uint32\_t* data, \textcolor{keywordtype}{int} len) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00003}00003     uint64\_t sum = 0;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00004}00004     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < len; i++) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00005}00005         sum += data[i];}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00006}00006     \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00007}00007     \textcolor{keywordflow}{return} sum / len;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00008}00008 \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00009}\mbox{\hyperlink{stats_8cpp_aaec682cee810b8ee76759529e8d588b3}{00009}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_aaec682cee810b8ee76759529e8d588b3}{stddev}}(\textcolor{keyword}{const} uint32\_t* data, \textcolor{keywordtype}{int} len, \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00010}00010     \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} sq\_sum = 0; }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00011}00011     }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00012}00012     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < len; i++) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00013}00013         sq\_sum += (data[i] -\/ \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}) * (data[i] -\/ \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}) ;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00015}00015     \textcolor{keywordflow}{return} sqrtl(sq\_sum / (len -\/ 1));}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00017}00017 \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00018}\mbox{\hyperlink{stats_8cpp_aa33959f0267797ef85a76e3f3c58a89c}{00018}} \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_aa33959f0267797ef85a76e3f3c58a89c}{cv}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}, \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} std\_dev) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00019}00019     \textcolor{keywordflow}{return} (std\_dev / \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}) * 100;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00020}00020 \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00021}00021     }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00024}\mbox{\hyperlink{stats_8cpp_a380d9b8ec5d290455b8ed131ad217dc8}{00024}} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_a380d9b8ec5d290455b8ed131ad217dc8}{chi2\_teor}}(\textcolor{keywordtype}{int} v, \textcolor{keywordtype}{double} x\_p) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00025}00025     \textcolor{keywordflow}{return} v + sqrt(2.0 * v) * x\_p + (2.0/3.0) * (x\_p * x\_p) -\/ (2.0/3.0);}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00026}00026 \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00029}\mbox{\hyperlink{stats_8cpp_ae675562af38c9eff04855f30c6f72f52}{00029}} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8cpp_ae675562af38c9eff04855f30c6f72f52}{chi2\_exp}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00031}00031     \textcolor{keywordtype}{int} bins = 1+ std::floor(log2(sample.size()));}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00032}00032     }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00033}00033     \textcolor{keyword}{const} uint64\_t total\_range = \textcolor{keyword}{static\_cast<}uint64\_t\textcolor{keyword}{>}(UINT32\_MAX) + 1;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00034}00034     \textcolor{keyword}{const} uint64\_t bin\_size = total\_range / bins;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00035}00035     }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00036}00036     std::vector<int> freq(bins, 0);}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00039}00039     \textcolor{keywordflow}{for} (uint32\_t num : sample) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00040}00040         uint64\_t value = num;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00041}00041         \textcolor{keywordtype}{int} bin\_index = value / bin\_size;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00042}00042         \textcolor{keywordflow}{if} (bin\_index >= bins) bin\_index = bins -\/ 1;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00043}00043         freq[bin\_index]++;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00044}00044     \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00046}00046     \textcolor{keywordtype}{double} n = sample.size();}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00047}00047     \textcolor{keywordtype}{double} expected = n / bins;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00048}00048     }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00050}00050     \textcolor{keywordtype}{double} chi\_square = 0.0;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00051}00051     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} count : freq) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00052}00052         \textcolor{keywordtype}{double} diff = count -\/ expected;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00053}00053         chi\_square += (diff * diff) / expected;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00054}00054     \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00056}00056     \textcolor{keywordflow}{return} chi\_square;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00057}00057 \}}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00060}\mbox{\hyperlink{stats_8cpp_a874a0dc8c284656cf72e8d6e257320b8}{00060}} \textcolor{keywordtype}{int} \mbox{\hyperlink{stats_8cpp_a874a0dc8c284656cf72e8d6e257320b8}{checking\_chi2}}(std::vector<uint32\_t> \&sample) \{}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00061}00061     \textcolor{keywordtype}{int} n = sample.size();}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00062}00062     \textcolor{keywordtype}{int} v = floor(log2(\textcolor{keywordtype}{double}(n)));}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00063}00063     \textcolor{keywordtype}{double} x\_25 = -\/0.674;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00064}00064     \textcolor{keywordtype}{double} x\_75 = 0.674;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00066}00066     \textcolor{keywordtype}{double} chi2\_e = \mbox{\hyperlink{stats_8cpp_ae675562af38c9eff04855f30c6f72f52}{chi2\_exp}}(sample);}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00067}00067     \textcolor{keywordtype}{double} chi2\_teor\_left = \mbox{\hyperlink{stats_8cpp_a380d9b8ec5d290455b8ed131ad217dc8}{chi2\_teor}}(v, x\_25);}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00068}00068     \textcolor{keywordtype}{double} chi2\_teor\_right = \mbox{\hyperlink{stats_8cpp_a380d9b8ec5d290455b8ed131ad217dc8}{chi2\_teor}}(v, x\_75);}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00069}00069     \textcolor{keywordtype}{int} passed = chi2\_teor\_left < chi2\_e \&\& chi2\_e < chi2\_teor\_right;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00070}00070     std::string res =  passed ? \textcolor{stringliteral}{"{}| chi2 PASS "{}} : \textcolor{stringliteral}{"{}| chi2 FAIL "{}};}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00071}00071     std::cout << res;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00073}00073     \textcolor{keywordflow}{return} passed;}
+\DoxyCodeLine{\Hypertarget{stats_8cpp_source_l00074}00074 \}}
+
+\end{DoxyCode}

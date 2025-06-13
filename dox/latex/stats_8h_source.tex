@@ -1,0 +1,24 @@
+\hypertarget{stats_8h_source}{}\doxysection{stats.\+h}
+\label{stats_8h_source}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.h@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.h}}
+\mbox{\hyperlink{stats_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00001}00001 \textcolor{preprocessor}{\#ifndef STATS\_H}}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00002}00002 \textcolor{preprocessor}{\#define STATS\_H}}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00003}00003 \textcolor{preprocessor}{\#include <cmath>}}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00004}00004 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00011}00011 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_ab5088a652062d770f0bd118f5cc251d5}{mean}}(\textcolor{keyword}{const} uint32\_t* data, \textcolor{keywordtype}{int} len);}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00020}00020 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_aaec682cee810b8ee76759529e8d588b3}{stddev}}(\textcolor{keyword}{const} uint32\_t* data, \textcolor{keywordtype}{int} len, \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_ab5088a652062d770f0bd118f5cc251d5}{mean}});}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00028}00028 \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_aa33959f0267797ef85a76e3f3c58a89c}{cv}}(\textcolor{keywordtype}{long} \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_ab5088a652062d770f0bd118f5cc251d5}{mean}}, \textcolor{keywordtype}{long} \textcolor{keywordtype}{double} std\_dev);}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00036}00036 \textcolor{keywordtype}{int} \mbox{\hyperlink{stats_8h_a874a0dc8c284656cf72e8d6e257320b8}{checking\_chi2}}(std::vector<uint32\_t> \&sample);}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00044}00044 \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_a380d9b8ec5d290455b8ed131ad217dc8}{chi2\_teor}}(\textcolor{keywordtype}{int} v, \textcolor{keywordtype}{double} x\_p);}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00051}00051 \textcolor{keywordtype}{double} \mbox{\hyperlink{stats_8h_ae675562af38c9eff04855f30c6f72f52}{chi2\_exp}}(\textcolor{keyword}{const} std::vector<uint32\_t>\& sample);}
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{stats_8h_source_l00053}00053 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

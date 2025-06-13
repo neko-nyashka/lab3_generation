@@ -1,0 +1,153 @@
+\hypertarget{nist_8h}{}\doxysection{/\+Users/anastasiatrufanova/\+Desktop/lab3\+\_\+generation/src/nist.h File Reference}
+\label{nist_8h}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.h@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/nist.h}}
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{nist_8h_a8f9b69f8fe6cf10c548088f1449af394}{monobit\+\_\+test}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Performs the monobit test (frequency test) for randomness. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{nist_8h_ac39cd752aabf779d182f2c34dd9656db}{runs\+\_\+test}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Performs the runs test for randomness. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{nist_8h_af8056c64415bd6a14bbd1e02e4c48bdd}{cusum\+\_\+test}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Performs the cumulative sums (Cusum) test for randomness. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{nist_8h_a94f5bf12a9b93439756de84711348deb}{block\+\_\+frequency\+\_\+test}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Performs the block frequency test. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{nist_8h_a23e725639238b2b46ebe6a055e1a264d}{longest\+\_\+run\+\_\+test}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Performs the longest run of ones in a block test. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{nist_8h_a7a44ba142152b381ce81d40b793d3053}{Phi}} (double x)
+\begin{DoxyCompactList}\small\item\em Computes the cumulative distribution function (CDF) of the standard normal distribution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{nist_8h_a94f5bf12a9b93439756de84711348deb}\label{nist_8h_a94f5bf12a9b93439756de84711348deb}} 
+\index{nist.h@{nist.h}!block\_frequency\_test@{block\_frequency\_test}}
+\index{block\_frequency\_test@{block\_frequency\_test}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{block\_frequency\_test()}{block\_frequency\_test()}}
+{\footnotesize\ttfamily int block\+\_\+frequency\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Performs the block frequency test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The sequence to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the test is passed, otherwise 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+
+\mbox{\Hypertarget{nist_8h_af8056c64415bd6a14bbd1e02e4c48bdd}\label{nist_8h_af8056c64415bd6a14bbd1e02e4c48bdd}} 
+\index{nist.h@{nist.h}!cusum\_test@{cusum\_test}}
+\index{cusum\_test@{cusum\_test}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{cusum\_test()}{cusum\_test()}}
+{\footnotesize\ttfamily int cusum\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Performs the cumulative sums (Cusum) test for randomness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The sequence to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the test is passed, otherwise 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+
+\mbox{\Hypertarget{nist_8h_a23e725639238b2b46ebe6a055e1a264d}\label{nist_8h_a23e725639238b2b46ebe6a055e1a264d}} 
+\index{nist.h@{nist.h}!longest\_run\_test@{longest\_run\_test}}
+\index{longest\_run\_test@{longest\_run\_test}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{longest\_run\_test()}{longest\_run\_test()}}
+{\footnotesize\ttfamily int longest\+\_\+run\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Performs the longest run of ones in a block test. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The sequence to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the test is passed, otherwise 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00127}{127}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+
+\mbox{\Hypertarget{nist_8h_a8f9b69f8fe6cf10c548088f1449af394}\label{nist_8h_a8f9b69f8fe6cf10c548088f1449af394}} 
+\index{nist.h@{nist.h}!monobit\_test@{monobit\_test}}
+\index{monobit\_test@{monobit\_test}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{monobit\_test()}{monobit\_test()}}
+{\footnotesize\ttfamily int monobit\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Performs the monobit test (frequency test) for randomness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The sequence to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the test is passed, otherwise 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+
+\mbox{\Hypertarget{nist_8h_a7a44ba142152b381ce81d40b793d3053}\label{nist_8h_a7a44ba142152b381ce81d40b793d3053}} 
+\index{nist.h@{nist.h}!Phi@{Phi}}
+\index{Phi@{Phi}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{Phi()}{Phi()}}
+{\footnotesize\ttfamily double Phi (\begin{DoxyParamCaption}\item[{double}]{x }\end{DoxyParamCaption})}
+
+
+
+Computes the cumulative distribution function (CDF) of the standard normal distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & Input value. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The CDF value (Phi). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+
+\mbox{\Hypertarget{nist_8h_ac39cd752aabf779d182f2c34dd9656db}\label{nist_8h_ac39cd752aabf779d182f2c34dd9656db}} 
+\index{nist.h@{nist.h}!runs\_test@{runs\_test}}
+\index{runs\_test@{runs\_test}!nist.h@{nist.h}}
+\doxysubsubsection{\texorpdfstring{runs\_test()}{runs\_test()}}
+{\footnotesize\ttfamily int runs\+\_\+test (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Performs the runs test for randomness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & The sequence to test. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the test is passed, otherwise 0. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{nist_8cpp_source_l00028}{28}} of file \mbox{\hyperlink{nist_8cpp_source}{nist.\+cpp}}.
+

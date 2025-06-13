@@ -1,0 +1,164 @@
+\hypertarget{stats_8h}{}\doxysection{/\+Users/anastasiatrufanova/\+Desktop/lab3\+\_\+generation/src/stats.h File Reference}
+\label{stats_8h}\index{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.h@{/Users/anastasiatrufanova/Desktop/lab3\_generation/src/stats.h}}
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+long double \mbox{\hyperlink{stats_8h_ab5088a652062d770f0bd118f5cc251d5}{mean}} (const uint32\+\_\+t $\ast$data, int len)
+\begin{DoxyCompactList}\small\item\em Computes the mean of the given data. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{stats_8h_aaec682cee810b8ee76759529e8d588b3}{stddev}} (const uint32\+\_\+t $\ast$data, int len, long double \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}})
+\begin{DoxyCompactList}\small\item\em Computes the standard deviation of the given data. \end{DoxyCompactList}\item 
+long double \mbox{\hyperlink{stats_8h_aa33959f0267797ef85a76e3f3c58a89c}{cv}} (long double \mbox{\hyperlink{stats_8cpp_ab5088a652062d770f0bd118f5cc251d5}{mean}}, long double std\+\_\+dev)
+\begin{DoxyCompactList}\small\item\em Computes the coefficient of variation. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{stats_8h_a874a0dc8c284656cf72e8d6e257320b8}{checking\+\_\+chi2}} (std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Checks the chi-\/squared hypothesis test for the sample. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{stats_8h_a380d9b8ec5d290455b8ed131ad217dc8}{chi2\+\_\+teor}} (int v, double x\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Returns theoretical chi-\/squared value. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{stats_8h_ae675562af38c9eff04855f30c6f72f52}{chi2\+\_\+exp}} (const std\+::vector$<$ uint32\+\_\+t $>$ \&sample)
+\begin{DoxyCompactList}\small\item\em Calculates experimental chi-\/squared value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{stats_8h_a874a0dc8c284656cf72e8d6e257320b8}\label{stats_8h_a874a0dc8c284656cf72e8d6e257320b8}} 
+\index{stats.h@{stats.h}!checking\_chi2@{checking\_chi2}}
+\index{checking\_chi2@{checking\_chi2}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{checking\_chi2()}{checking\_chi2()}}
+{\footnotesize\ttfamily int checking\+\_\+chi2 (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Checks the chi-\/squared hypothesis test for the sample. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Vector of integer sample data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if accepted, 1 if rejected. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00060}{60}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
+\mbox{\Hypertarget{stats_8h_ae675562af38c9eff04855f30c6f72f52}\label{stats_8h_ae675562af38c9eff04855f30c6f72f52}} 
+\index{stats.h@{stats.h}!chi2\_exp@{chi2\_exp}}
+\index{chi2\_exp@{chi2\_exp}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{chi2\_exp()}{chi2\_exp()}}
+{\footnotesize\ttfamily double chi2\+\_\+exp (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sample }\end{DoxyParamCaption})}
+
+
+
+Calculates experimental chi-\/squared value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample} & Vector of integer sample data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Experimental chi-\/squared value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00029}{29}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
+\mbox{\Hypertarget{stats_8h_a380d9b8ec5d290455b8ed131ad217dc8}\label{stats_8h_a380d9b8ec5d290455b8ed131ad217dc8}} 
+\index{stats.h@{stats.h}!chi2\_teor@{chi2\_teor}}
+\index{chi2\_teor@{chi2\_teor}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{chi2\_teor()}{chi2\_teor()}}
+{\footnotesize\ttfamily double chi2\+\_\+teor (\begin{DoxyParamCaption}\item[{int}]{v,  }\item[{double}]{x\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Returns theoretical chi-\/squared value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & Degrees of freedom. \\
+\hline
+{\em x\+\_\+p} & Significance level (quantile). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Theoretical chi-\/squared value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00024}{24}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
+\mbox{\Hypertarget{stats_8h_aa33959f0267797ef85a76e3f3c58a89c}\label{stats_8h_aa33959f0267797ef85a76e3f3c58a89c}} 
+\index{stats.h@{stats.h}!cv@{cv}}
+\index{cv@{cv}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{cv()}{cv()}}
+{\footnotesize\ttfamily long double cv (\begin{DoxyParamCaption}\item[{long double}]{mean,  }\item[{long double}]{std\+\_\+dev }\end{DoxyParamCaption})}
+
+
+
+Computes the coefficient of variation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mean} & The mean of the data. \\
+\hline
+{\em std\+\_\+dev} & The standard deviation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The coefficient of variation (as a percentage). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
+\mbox{\Hypertarget{stats_8h_ab5088a652062d770f0bd118f5cc251d5}\label{stats_8h_ab5088a652062d770f0bd118f5cc251d5}} 
+\index{stats.h@{stats.h}!mean@{mean}}
+\index{mean@{mean}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{mean()}{mean()}}
+{\footnotesize\ttfamily long double mean (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t $\ast$}]{data,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Computes the mean of the given data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array of values. \\
+\hline
+{\em len} & Number of elements in the array. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The mean value. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00002}{2}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
+\mbox{\Hypertarget{stats_8h_aaec682cee810b8ee76759529e8d588b3}\label{stats_8h_aaec682cee810b8ee76759529e8d588b3}} 
+\index{stats.h@{stats.h}!stddev@{stddev}}
+\index{stddev@{stddev}!stats.h@{stats.h}}
+\doxysubsubsection{\texorpdfstring{stddev()}{stddev()}}
+{\footnotesize\ttfamily long double stddev (\begin{DoxyParamCaption}\item[{const uint32\+\_\+t $\ast$}]{data,  }\item[{int}]{len,  }\item[{long double}]{mean }\end{DoxyParamCaption})}
+
+
+
+Computes the standard deviation of the given data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the array of values. \\
+\hline
+{\em len} & Number of elements in the array. \\
+\hline
+{\em mean} & The mean of the data. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The standard deviation. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{stats_8cpp_source_l00009}{9}} of file \mbox{\hyperlink{stats_8cpp_source}{stats.\+cpp}}.
+
